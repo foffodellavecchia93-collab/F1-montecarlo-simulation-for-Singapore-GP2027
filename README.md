@@ -8,7 +8,7 @@ The pipeline combines season performance data with historical circuit parameters
 
 1. **Data Ingestion (`get_2026_fastf1_data`)**: Pulls completed race and sprint results from `fastf1`, computes driver and constructor standings, and estimates each driver's `Street_Affinity` across street circuits (`Monaco`, `Baku`, `Singapore`).
 2. **Strength Modeling (`compute_strength_score`)**: Normalizes constructor strength, driver points, and street-circuit affinity into a composite `Strength_Score_2026_2027` in $[0, 1]$:
-   $$\text{Strength\_Score}_{2026\text{–}2027} = w_{\text{car}} \cdot \text{Car\_Norm} + w_{\text{drv}} \cdot \text{Driver\_Norm} + w_{\text{str}} \cdot \text{Street\_Norm}$$
+   **Strength_Score_2026_2027** = `w_car * Car_Norm + w_drv * Driver_Norm + w_str * Street_Norm`
    with default weights $w_{\text{car}} = 0.50$, $w_{\text{drv}} = 0.35$, and $w_{\text{str}} = 0.15$.
 3. **Empirical Calibration (`extract_circuit_empirical_params`)**: Analyzes past editions of a target Grand Prix (e.g., Singapore, 2022–2025) to extract:
    - Average neutralizations (`avg_neutralizations`, Safety Car / Virtual Safety Car statuses `4` and `6`)
