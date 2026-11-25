@@ -1,0 +1,29 @@
+# Virtual environments & Python artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Environment variables & credentials
+.env
+.env.*
+
+# FastF1 cache & local data dumps
+.cache/
+F1 python/
+*.ff1pkl
+*.sqlite
+*.db
+
+# IDE & OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated plots (keep curated images in assets/)
+/*.png
